@@ -1,0 +1,13 @@
+{
+  "Statement": [{
+    "Effect":"Allow",
+    "Principal":"*",
+    "Action":"sqs:SendMessage",
+    "Resource":"arn:aws:sqs:us-east-2:123456789012:MyQueue",
+    "Condition":{
+      "ArnEquals":{
+        "aws:SourceArn":"arn:aws:sns:us-east-1:123456789012:test-topic"
+      }
+    }
+  }]
+}
